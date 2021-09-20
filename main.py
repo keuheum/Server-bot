@@ -147,11 +147,12 @@ async def uptime(ctx):
           value=f"용량: {convert_size(psutil.disk_usage(disk.mountpoint)[0])}\n사용량: {psutil.disk_usage(disk.mountpoint)[3]}%", 
           inline=True
           )
-  embed.add_field(name="­", value="­", inline=True)
+  embed.add_field(name="­", value="­", inline=True)#2개의 하드가 있어서 이쁘게 하려고 공백문자를 넣었습니다
   embed.add_field(name="램 용량", value=str(round(psutil.virtual_memory().total / (1024.0 **3)))+"GB", inline=True)
   embed.add_field(name="남은 램 용량", value=f"{convert_size(memory_usage_dict['available'])}", inline=True)
   embed.add_field(name="램 사용량", value=f"{memory_usage_dict['percent']}%", inline=True)
   embed.add_field(name="CPU 정보", value=f"이름: {cpuinfo.get_cpu_info()['brand_raw']}\n코어: {os.cpu_count()}\n비트: {cpuinfo.get_cpu_info()['bits']}bits", inline=True)
+  #위 코드에서 시간 소모가 많아, 빠르게 임베드가 나오게 하고싶다면, 실시간이 아닌 미리 내용을 적어
   embed.add_field(name="CPU 사용량", value=f"{psutil.cpu_percent()}%", inline=True)
   embed.add_field(name="네크워크", value=f"Sent: {round(net.bytes_sent/1024**2, 1)}MB\nRecv: {round(net.bytes_recv/1024**2, 1)}MB", inline=True)
 
@@ -163,6 +164,6 @@ async def on_command_error(ctx, error):
   tb = traceback.format_exception(type(error), error, error.__traceback__)
   err = [line.rstrip() for line in tb]
   errstr = '\n'.join(err)
-  await log_msg(f"<@!604983644733440001> , 에러 발생\n{errstr}")
+  await log_msg(f"<@!your id> , 에러 발생\n{errstr}")
 
-bot.run("ODc4OTYxMjYxNDc0MzczNjYy.YSIydw.KDc24WRNA1axihSbsAXccp_b54g")
+bot.run("your bot token")
