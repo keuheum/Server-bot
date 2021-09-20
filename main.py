@@ -152,7 +152,7 @@ async def uptime(ctx):
   embed.add_field(name="남은 램 용량", value=f"{convert_size(memory_usage_dict['available'])}", inline=True)
   embed.add_field(name="램 사용량", value=f"{memory_usage_dict['percent']}%", inline=True)
   embed.add_field(name="CPU 정보", value=f"이름: {cpuinfo.get_cpu_info()['brand_raw']}\n코어: {os.cpu_count()}\n비트: {cpuinfo.get_cpu_info()['bits']}bits", inline=True)
-  #위 코드에서 시간 소모가 많아, 빠르게 임베드가 나오게 하고싶다면, 실시간이 아닌 미리 내용을 적어
+  #위 코드에서 시간 소모가 많아, 빠르게 임베드가 나오게 하고싶다면, 실시간이 아닌 미리 내용을 적어두세요
   embed.add_field(name="CPU 사용량", value=f"{psutil.cpu_percent()}%", inline=True)
   embed.add_field(name="네크워크", value=f"Sent: {round(net.bytes_sent/1024**2, 1)}MB\nRecv: {round(net.bytes_recv/1024**2, 1)}MB", inline=True)
 
