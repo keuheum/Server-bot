@@ -61,7 +61,7 @@ CPU 사용량: {psutil.cpu_percent()}%\n램 사용량: {memory_usage_dict['perce
 @bot.event
 async def on_ready():
   bot.owner_ids = [604983644733440001]
-  await log_msg(f"bot is started")
+  await log_msg("bot is started")
   send_message.start()
 
 ##########################################소유자용##########################################
